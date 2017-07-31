@@ -1,0 +1,20 @@
+{
+  "name": "sport_beats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmurphy178/javascript-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmurphy178/javascript-project/issues"
+  },
+  "homepage": "https://github.com/rmurphy178/javascript-project#readme"
+}
