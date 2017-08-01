@@ -9,7 +9,11 @@
     <h1>SportBeats</h1>
 
     <div id="dial"></div>
-    <div id="sequencer"></div>
+    <div id="target"></div>
+    <div id="matrix"></div>
+    <div id="piano"></div>
+    <div id="slider"></div>
+    <div id="target"></div>
 
 
 
@@ -17,7 +21,13 @@
 
     <script>
     const dial = new Nexus.Dial('#dial')
-    const sequencer = new Nexus.Sequencer('#sequencer')
+    const sequencer = new Nexus.Sequencer('#target',{
+     'size': [800,400],
+     'mode': 'toggle',
+     'rows': 8,
+     'columns': 16
+    })
+     sequencer.matrix.toggle.column(2);
     </script>
   </body>
 </html>
