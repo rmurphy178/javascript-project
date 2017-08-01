@@ -29,7 +29,10 @@
     })
     const sequence = new Nexus.Sequence([1,3,5,7],"up")
      sequencer.matrix.toggle.column(2);
-     const interval = new Nexus.Interval(100, () => sequence.next())
+    const interval = new Nexus.Interval(100, function() {
+  console.log('beep');
+})
+    sequencer.start()
     </script>
   </body>
 </html>
