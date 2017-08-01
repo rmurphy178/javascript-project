@@ -1,61 +1,59 @@
-## Sportbeats
+# Sport Beats
 
 ### Background
 
-Sportbeats is a beatbox/sound board app created using HTML/CSS, vanilla JavaScript, and jQuery featuring
-sport-themed sound effects.
+Sport beats is an interactive sound board app that allows users to create and save audio tracks using popular songs overlaid with sport-themed sound effects. The app will be created using vanilla JavaScript, HTML/CSS, and jQuery. Users will be able to select from several popular songs to use as the base audio that sound effects will be added to. Users add sound effects by clicking on squares on the board to activate or deactivate them. Activated squares will produce a sound effect that is added to the base track when that square is cycled over. Each sound effect will also have an associated color that flashes when a square corresponding to that sound is cycled over. The app will also give users the ability to speed up or slow down their recorded tracks.
 
-### Functionality & MVP  
 
-With sportbeats, users will be able to:
+### Functionality & MVP
 
-- [ ] Start, pause, and reset interactive sound board
-- [ ] Toggle squares to activate or deactivate sound effects
-- [ ] Move a slider to change the pace of play
-- [ ] Turn off and on sound through a mute button
+With Sport Beats, users will be able to:
 
-In addition, this project will include:
+- [ ] Choose from several songs to use for their track
+- [ ] Activate squares on the board that will add a sound effect to their selected song and flash a corresponding color when that sound effect plays
+- [ ] Save created tracks to local storage
+- [ ] Speed up or slow down the playback rate of recorded tracks
+- [ ] Turn sound on and off through a mute button
+
+This project will also include:
 
 - [ ] A production README
 
+
 ### Wireframes
 
-This app will consist of a single screen with board, controls, and nav links to Github and LinkedIn.  Game controls will include Start, Stop, and mute buttons as well as a slider to control the speed.  
+This app will consist of a single screen with a board/sequencer and playback controls. Playback controls will include buttons for play, pause, record, mute, speed, and song selections.
 ![wireframes](images/sportbeats.png)
 
-### Architecture and Technologies
-
-**NB**: one of the main things you should be researching and deciding upon while you write this proposal is what technologies you plan to use.  Identify and create a plan of attack for the major technical challenges in your project.  It's okay if you don't have all the details of implementation fleshed out, but you should have a solid roadmap by Monday morning.
 
 This project will be implemented with the following technologies:
 
-- Vanilla JavaScript and `jquery` for overall structure and logic,
+- Vanilla JavaScript and `jquery` for overall structure and logic
 - HTML/CSS for rendering and graphics
-- Tone.js for managing audio and sound effects
-- Webpack to bundle and serve up the various scripts.
+- Tone.js for sound effects
+- NexusUI 2.0 for generating interface plus tuning & timing helper methods
+- Webpack to bundle and serve up the relevant scripts
 
-In addition to the webpack entry file, there will be two scripts involved in this project:
-
-`board.js`: this script will handle the logic for manipulating the state of cells rendered
-`audio.js`: this script will handle the logic audio and sound effects
 
 ### Implementation Timeline
 
-**Day 1**: Setup all necessary Node modules, including getting webpack up and running and `tone.js` installed.  Create `webpack.config.js` as well as `package.json`.  Write a basic entry file and the bare bones skeleton of both scripts outlined above.  Learn the basics of `tone.js`.  
+**Day 1**: Create the project skeleton and gather necessary sound effects:
 
-**Day 2**: Dedicate this day to learning how to user `tone.js` create and use sounds. First, build out the cell objects to populate to the `Board` object.  Then, use `board.js` to create and render the grid of square cells.  Build in the ability to toggle the live/dead states on click for each cell.  Goals for the day:
+- Setup required node modules and webpack
+- Render basic soundboard
+- Become familiar with tone.js and NexusUI
 
-- Render a square grid
-- Make each cell in the grid clickable, toggling the state of the square on click
+**Day 2**: Implement required classes and logic for sequencer/board & tiles:
 
-**Day 3**: Incorporate controls to start, stop, mute, and change speed of audio. Goals for the day:
+- Toggle on and off to activate tile
+- Play sound effect and light up when activated
+- Implement logic for looping over board/tiles  
 
-- Have a functional basic board interface
+**Day 3**: Configure to allow track recordings to be saved locally:
 
-**Day 4**: Install remaining controls for the user to interact with the game. Style the frontend, making it polished and professional. Refactor to optimize user experience.
+- Record tracks and play them back at different speeds
 
+**Day 4**: Style and refactor components. Goals for the day:
 
-### Bonus features
-
-- [ ] Import sound effects
-- [ ] Record and share tracks
+- Finish styling to maximize aesthetic appeal
+- Refactor to enhance user experience and ensure intuitive functionality
