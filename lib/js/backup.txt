@@ -1,0 +1,167 @@
+
+const dial = new Nexus.Dial('#dial')
+const toggle = new Nexus.Toggle('#toggle')
+const sequencer = new Nexus.Sequencer('#sequencer',{
+ 'size': [1000,500],
+ 'mode': 'toggle',
+ 'rows': 8,
+ 'columns': 16
+})
+const piano = new Nexus.Piano('#piano')
+const noise = new Tone.Noise("pink").start().stop();
+
+
+
+const autoFilter = new Tone.AutoFilter({
+    "frequency" : "8m",
+    "min" : 800,
+    "max" : 15000
+  }).connect(Tone.Master);
+
+//connect the noise
+noise.connect(autoFilter);
+
+piano.on('change',function(v) {
+  pianoKey(v);
+  console.log(v);
+})
+
+
+const pianoKey = (value) => {
+return value === true ? noise.start() : noise.stop();
+console.log(playing);
+}
+
+
+const beat = new Nexus.Interval(200, () => {
+console.log('beep');
+})
+console.log(sequencer.matrix.column);
+
+
+const textbutton = new Nexus.TextButton('#button');
+
+sequencer.on('change',function(v) {
+console.log(v);
+})
+
+
+textbutton.on('change',function(v) {
+step(v);
+})
+
+const step = (v) => {
+return v === false ? sequencer.next() : false;
+}
+sequencer.on('step',function(v) {
+console.log(v);
+})
+
+
+const play = (value) => {
+  return value === false ? sequencer.start() : sequencer.stop();
+}
+
+
+toggle.on('change', (v) => {
+  play(v)
+})
+
+
+const AudioContext = window.AudioContext ||
+                     window.webkitAudioContext;
+
+const context = new AudioContext();
+
+
+const oscillator = context.createOscillator();
+oscillator.connect(context.destination)
+
+
+const source = context.createBufferSource('./lib/media/bad_company.mp3')
+
+source.connect(context.destination);
+
+source.start();
+
+const player = new Tone.Player().toMaster();
+//play as soon as the buffer is loaded
+player.autostart = true;
+
+const audio = new Audio('./lib/media/bad_company.mp3');
+audio.play();
+
+
+
+
+
+
+
+
+//creating an audio context
+
+let audioBuffer;
+
+window.addEventListener('load', init);
+
+function init()
+{
+
+try
+{
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    ctx = new AudioContext();
+
+}
+catch(e)
+{
+    alert("Your browser doesn't support Web Audio API");
+}
+
+loadSound();
+// playSound();  // comment here
+}
+
+//loading sound into the created audio ctx
+function loadSound()
+{
+// set the audio file's URL
+var audioURL='./lib/media/bad_company.mp3';
+
+//creating a new request
+var request = new XMLHttpRequest();
+request.open("GET",audioURL,true);
+request.responseType= 'arraybuffer';
+request.onload = function(){
+
+    //take the audio from http request and decode it in an audio buffer
+    context.decodeAudioData(request.response, function(buffer){
+      audioBuffer = buffer;
+      console.log(audioBuffer);
+      if(audioBuffer){  // check here
+        playSound();
+      }
+    });
+
+};
+
+request.send();
+
+}
+
+
+
+//playing the audio file
+function playSound() {
+
+//creating source node
+var source = context.createBufferSource();
+//passing in file
+source.buffer = audioBuffer;
+
+//start playing
+source.connect(context.destination);
+source.start(0);
+console.log('playing');
+
+}
