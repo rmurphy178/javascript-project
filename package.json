@@ -23,6 +23,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "nexusui": "^2.0.0",
+    "tone": "^0.10.0",
     "web-audio-api": "^0.2.2",
     "webpack": "^3.4.1"
   }
