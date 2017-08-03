@@ -53,6 +53,7 @@ step(v);
 const step = (v) => {
 return v === false ? sequencer.next() : false;
 }
+
 sequencer.on('step',function(v) {
 console.log(v);
 })
@@ -82,7 +83,7 @@ const source = context.createBufferSource('./lib/media/bad_company.mp3')
 
 source.connect(context.destination);
 
-source.start();
+source.start(0);
 
 const player = new Tone.Player().toMaster();
 //play as soon as the buffer is loaded
