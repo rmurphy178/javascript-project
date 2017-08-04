@@ -2,10 +2,7 @@
 div[style] {
    background-color: red !important;
 }*/
-.box {
-  display: flex;
-  flex-flow: row wrap;  
-  }
+
 .buzz {
   -webkit-animation-name: oceanPulse;
   -webkit-animation-duration: 0.9s;
