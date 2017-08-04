@@ -7,20 +7,22 @@
   <body>
     <h1>DJ by Decade</h1>
 
+
     <div id="dial"></div>
     <div id="sequencer"></div>
     <div id="matrix"></div>
     <div id="piano"></div>
     <div id="slider"></div>
+    <section className="box">
     <div id="toggle"></div>
+    <button onClick={board.sequencer.invert()}>FLIP OUT</button>
     <div id="button"></div>
-
+    </section>
 
 
     <script type="text/javascript" src="./lib/js/bundle.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="./lib/js/jsfx.js"></script>
-
 
   </body>
 </html>
