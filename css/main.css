@@ -3,6 +3,12 @@ div[style] {
    background-color: red !important;
 }*/
 
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 .buzz {
   -webkit-animation-name: oceanPulse;
   -webkit-animation-duration: 0.9s;

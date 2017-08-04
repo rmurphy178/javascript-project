@@ -8,18 +8,14 @@
     <h1>DJ by Decade</h1>
 
 
-    <div id="dial"></div>
-    <div style="background-color: #00e600; box-shadow: 0 0 18px #00e600" id="sequencer"></div>
-    <div id="matrix"></div>
+    <button style="background-color: rgb(255,0,125); box-shadow: 0 0 18px rgb(255,0,125)" onClick={board.sequencer.invert()}>FLIP OUT</button>
+    <label style="background-color: rgb(0,255,125); box-shadow: 0 0 18px rgb(0,255,125)">
+      <span id="toggle"></span>
+      POWER
+    </label>
+    <div id="sequencer"></div>
     <div style="background-color: #66ccff; box-shadow: 0 0 18px #66ccff" id="piano"></div>
-    <div id="slider"></div>
-    <section className="box">
-    <div id="toggle"></div>
-    <button onClick={board.sequencer.invert()}>FLIP OUT</button>
-    <div id="button"></div>
-    </section>
-
-
+    <div style="background-color: rgb(0,255,0); box-shadow: 0 0 18px rgb(0,255,0)" id="button"></div>
     <script type="text/javascript" src="./lib/js/bundle.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="./lib/js/jsfx.js"></script>
