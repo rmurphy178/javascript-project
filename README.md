@@ -19,6 +19,10 @@ JamzBoard (https://rmurphy178.github.io/javascript-project/) is an interactive s
 ## Technologies
 - NexusUI
 
+## Demo
+
+[![https://gyazo.com/9cd8d29ef89025ab1c63305645bcaef3](https://i.gyazo.com/9cd8d29ef89025ab1c63305645bcaef3.gif)](https://gyazo.com/9cd8d29ef89025ab1c63305645bcaef3)
+
 
 ### Coming Soon
 - Ability to upload user tracks
